@@ -6,15 +6,15 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 00:56:08 by anggonza          #+#    #+#             */
-/*   Updated: 2021/07/31 00:56:10 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/07/31 01:10:03 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h" 
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (s[i])
