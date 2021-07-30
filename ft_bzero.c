@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/31 00:59:29 by anggonza          #+#    #+#             */
+/*   Updated: 2021/07/31 00:59:56 by anggonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    char    *ptr;
-    size_t     i;
+	char	*ptr;
+	size_t	i;
 
-    ptr = s;
-    while (i < n)
-    {
-        ptr[i] = '\0';
-        i++;
-    }
+	ptr = s;
+	while (i < n)
+	{
+		ptr[i] = '\0';
+		i++;
+	}
 }
