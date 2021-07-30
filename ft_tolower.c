@@ -6,13 +6,13 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:30:08 by anggonza          #+#    #+#             */
-/*   Updated: 2021/07/30 19:38:20 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/07/30 19:40:36 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int character)
 {
 	if (character >= 41 && character <= 132)
-		character += 40;
+		character += 32;
 	return (character);
 }
