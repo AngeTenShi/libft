@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 18:29:58 by anggonza          #+#    #+#             */
-/*   Updated: 2021/08/06 18:32:04 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:33:40 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	dst = (unsigned char *)dest;
 	source = (unsigned char *)source;
 	i = 0;
+	if (!dest || !src)
+		return (NULL);
 	while (source[i])
 	{
 		tmp[i] = source[i];
