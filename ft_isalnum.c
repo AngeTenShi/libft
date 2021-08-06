@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 01:05:19 by anggonza          #+#    #+#             */
-/*   Updated: 2021/07/31 01:07:38 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:32:20 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }
