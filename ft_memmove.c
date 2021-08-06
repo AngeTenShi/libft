@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 17:52:29 by anggonza          #+#    #+#             */
-/*   Updated: 2021/08/06 18:34:12 by anggonza         ###   ########.fr       */
+/*   Created: 2021/08/06 18:29:58 by anggonza          #+#    #+#             */
+/*   Updated: 2021/08/06 18:32:04 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
 	unsigned char	*dst;
 	unsigned char	*source;
+	unsigned char	*tmp;
+	size_t			i;
 
 	dst = (unsigned char *)dest;
-	source = (unsigned char *)src;
-	if (!dest || !src)
-		return (NULL);
+	source = (unsigned char *)source;
+	i = 0;
+	while (source[i])
+	{
+		tmp[i] = source[i];
+		i++;
+	}
 	i = 0;
 	while (i < n)
 	{
-		dst[i] = source[i];
+		dst[i] = tmp[i];
 		i++;
 	}
 	return (dest);
