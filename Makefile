@@ -6,7 +6,7 @@
 #    By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:57:00 by anggonza          #+#    #+#              #
-#    Updated: 2021/08/06 17:50:52 by anggonza         ###   ########.fr        #
+#    Updated: 2021/08/08 15:34:33 by anggonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRC = ft_isalpha \
 	  ft_strdup \
 	  ft_substr \
 	  ft_strjoin \
-	  ft_strtrim
+	  ft_strtrim \
 	  ft_split \
 	  ft_itoa \
 	  ft_strmapi \
