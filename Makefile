@@ -5,48 +5,47 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/06 16:57:00 by anggonza          #+#    #+#              #
-#    Updated: 2021/08/08 15:34:33 by anggonza         ###   ########.fr        #
+#    Created: 2021/10/21 16:46:30 by anggonza          #+#    #+#              #
+#    Updated: 2021/10/21 16:46:33 by anggonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# rules : $(NAME) , all, clean, fclean, re
-NAME = libft.a
+NAME	= libft.a
 
-SRC = ft_isalpha \
-	  ft_isdigit \
-	  ft_isalnum \
-	  ft_isascii \
-	  ft_isprint \
-	  ft_strlen \
-	  ft_memset \
-	  ft_bzero \
-	  ft_memcpy \
-	  ft_memmove \
-	  ft_strlcpy \
-	  ft_strlcat \
-	  ft_toupper \
-	  ft_tolower \
-	  ft_strchr \
-	  ft_strrchr \
-	  ft_strncmp \
-	  ft_memchr \
-	  ft_memcmp \
-	  ft_strnstr \
-	  ft_atoi \
-	  ft_calloc \
-	  ft_strdup \
-	  ft_substr \
-	  ft_strjoin \
-	  ft_strtrim \
-	  ft_split \
-	  ft_itoa \
-	  ft_strmapi \
-	  ft_striteri \
-	  ft_putchar_fd \
-	  ft_putstr_fd \
-	  ft_putendl_fd \
-	  ft_putnbr_fd \
+SRCS	= ft_atoi.c \
+ft_bzero.c \
+ft_calloc.c \
+ft_isalnum.c \
+ft_isalpha.c \
+ft_isascii.c \
+ft_isdigit.c \
+ft_isprint.c \
+ft_itoa.c \
+ft_memchr.c \
+ft_memcmp.c \
+ft_memcpy.c \
+ft_memmove.c \
+ft_memset.c \
+ft_putchar_fd.c \
+ft_putendl_fd.c \
+ft_putnbr_fd.c \
+ft_putstr_fd.c \
+ft_split.c \
+ft_strchr.c \
+ft_strdup.c \
+ft_striteri.c \
+ft_strjoin.c \
+ft_strlcat.c \
+ft_strlcpy.c \
+ft_strlen.c \
+ft_strmapi.c \
+ft_strncmp.c \
+ft_strnstr.c \
+ft_strrchr.c \
+ft_strtrim.c \
+ft_substr.c \
+ft_tolower.c \
+ft_toupper.c \
 
 BONUS	= ft_lstadd_back.c \
 ft_lstadd_front.c \
@@ -58,31 +57,34 @@ ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
 
-HEADER = includes
 OBJS	= ${SRCS:.c=.o}
 OBJS_BONUS = ${BONUS:.c=.o}
 
-CC = gcc
-AR = ar rcs
-FLAGS = -Wall -Wextra -Werror 
+HEADER	= includes
 
-%.o : %.c
-	$(CC) -c ${FLAGS} -o $@ $<
+CC		= gcc
+RM		= rm -f
+AR		= ar rcs
 
-all: 
-	$(AR) $(NAME) ${OBJS}
+CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): all
+%.o: %.c
+			${CC} -c ${CFLAGS} -o $@ $<
+
+all: $(NAME)
+
+$(NAME):	$(OBJS)
+			$(AR) $@ $^
+
+bonus:	$(OBJS) ${OBJS_BONUS}
+			$(AR) ${NAME} $^
 
 clean:
-	/bin/rm -rf ${OBJS}
+		${RM} ${OBJS} ${OBJS_BONUS}
 
-fclean: clean
-	/bin/rm -f ${NAME}
+fclean:	clean
+		${RM} ${NAME}
 
 re: fclean all
 
-bonus : ${OBJS} ${OBJS_BONUS}
-	${AR} ${NAME} ${OBJS} ${OBJS_BONUS}
-
-.PHONY:	all clean fclean re $(NAME)
+.PHONY:	all clean fclean bonus re

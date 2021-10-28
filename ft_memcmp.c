@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 23:56:06 by anggonza          #+#    #+#             */
-/*   Updated: 2021/08/12 00:07:25 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/10/21 17:34:00 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*str1;
 	unsigned char	*str2;
-	int				i;
+	size_t			i;
 
 	i = 0;
 	str1 = (unsigned char *)s1;

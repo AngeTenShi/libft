@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:30:08 by anggonza          #+#    #+#             */
-/*   Updated: 2021/10/23 18:08:06 by anggonza         ###   ########.fr       */
+/*   Created: 2021/10/28 17:26:38 by anggonza          #+#    #+#             */
+/*   Updated: 2021/10/28 17:32:28 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+int	main(void)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	return (c);
+	char	*s;
+	char	**string;
+
+	s = malloc(8);
+	s[0] = 'a';
+	s[1] = 'b';
+	s[2] = 'c';
+	s[3] = ',';
+	s[4] = ',';
+	s[5] = 'e';
+	s[6] = 'f';
+	s[7] = 'g';
+	string = ft_split(s, ',');
+	int i = 0;
+	for (i = 0; i < 2; i++)
+		printf("%s\n", string[i]);
+	return (0);
 }

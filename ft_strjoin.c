@@ -1,18 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:30:08 by anggonza          #+#    #+#             */
-/*   Updated: 2021/10/23 18:08:06 by anggonza         ###   ########.fr       */
+/*   Created: 2021/10/21 11:25:55 by anggonza          #+#    #+#             */
+/*   Updated: 2021/10/28 16:12:51 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	return (c);
+	int		size_s1;
+	int		size_s2;
+	char	*str;
+	int		i;
+
+	i = 0;
+	size_s1 = ft_strlen(s1);
+	size_s2 = ft_strlen(s2);
+	str = malloc(size_s1 + size_s2 + 1);
+	if (!str)
+		return (NULL);
+	while (i <= size_s1 + size_s2)
+	{
+		if (i < size_s1)
+		{
+			str[i] = *s1++;
+		}
+		else
+		{
+			str[i] = *s2++;
+		}
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }

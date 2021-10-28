@@ -1,31 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/31 00:57:16 by anggonza          #+#    #+#             */
-/*   Updated: 2021/10/23 19:21:31 by anggonza         ###   ########.fr       */
+/*   Created: 2021/10/21 15:26:11 by anggonza          #+#    #+#             */
+/*   Updated: 2021/10/23 18:36:55 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+int	len(long nb)
+{
+	int	len;
+
+	len = 0;
+	if (nb < 0)
+	{
+		nb = nb * -1;
+		len++;
+	}
+	while (nb > 0)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int nb)
 {
 	char	*str;
+	long	n;
 	int		i;
 
-	i = 0;
-	str = (char *)malloc(sizeof(char) * ft_strlen((const char *)s) + 1);
-	if (!str)
+	n = nb;
+	i = len(n);
+	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	while (s[i])
+	str[i--] = '\0';
+	if (n == 0)
 	{
-		str[i] = s[i];
-		i++;
+		str[0] = 48;
+		return (str);
 	}
-	str[i] = '\0';
+	if (n < 0)
+	{
+		str[0] = '-';
+		n = n * -1;
+	}
+	while (n > 0)
+	{
+		str[i] = 48 + (n % 10);
+		n = n / 10;
+		i--;
+	}
 	return (str);
 }
