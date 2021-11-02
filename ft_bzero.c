@@ -6,11 +6,11 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 00:59:29 by anggonza          #+#    #+#             */
-/*   Updated: 2021/10/21 17:30:21 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:11:35 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

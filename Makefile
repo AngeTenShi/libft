@@ -6,7 +6,7 @@
 #    By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/21 16:46:30 by anggonza          #+#    #+#              #
-#    Updated: 2021/10/21 16:46:33 by anggonza         ###   ########.fr        #
+#    Updated: 2021/11/02 18:43:42 by anggonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,10 @@ AR		= ar rcs
 
 CFLAGS = -Wall -Wextra -Werror
 
+ifdef WITH_BONUS
+	OBJS = ${SRCS:.c=.o} ${BONUS:.c=.o}
+endif
+
 %.o: %.c
 			${CC} -c ${CFLAGS} -o $@ $<
 
@@ -76,8 +80,8 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 			$(AR) $@ $^
 
-bonus:	$(OBJS) ${OBJS_BONUS}
-			$(AR) ${NAME} $^
+bonus:
+			make WITH_BONUS=1 all
 
 clean:
 		${RM} ${OBJS} ${OBJS_BONUS}

@@ -6,11 +6,10 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 18:51:32 by anggonza          #+#    #+#             */
-/*   Updated: 2021/08/08 15:51:09 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:08:33 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)

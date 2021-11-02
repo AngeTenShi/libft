@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_main.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 17:26:38 by anggonza          #+#    #+#             */
-/*   Updated: 2021/10/28 17:32:28 by anggonza         ###   ########.fr       */
+/*   Created: 2021/11/02 13:29:26 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/02 13:33:53 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*s;
-	char	**string;
-
-	s = malloc(8);
-	s[0] = 'a';
-	s[1] = 'b';
-	s[2] = 'c';
-	s[3] = ',';
-	s[4] = ',';
-	s[5] = 'e';
-	s[6] = 'f';
-	s[7] = 'g';
-	string = ft_split(s, ',');
-	int i = 0;
-	for (i = 0; i < 2; i++)
-		printf("%s\n", string[i]);
-	return (0);
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

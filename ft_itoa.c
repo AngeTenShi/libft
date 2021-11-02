@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 15:26:11 by anggonza          #+#    #+#             */
-/*   Updated: 2021/10/23 18:36:55 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:48:59 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ char	*ft_itoa(int nb)
 
 	n = nb;
 	i = len(n);
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+	if (n == 0)
+		return (ft_strdup("0"));
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (NULL);
 	str[i--] = '\0';
-	if (n == 0)
-	{
-		str[0] = 48;
-		return (str);
-	}
 	if (n < 0)
 	{
 		str[0] = '-';

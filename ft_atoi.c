@@ -6,13 +6,14 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 00:23:39 by anggonza          #+#    #+#             */
-/*   Updated: 2021/10/28 14:35:29 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:03:03 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_atoi(const char *str)
+
 {
 	long int	i;
 	long int	num;
