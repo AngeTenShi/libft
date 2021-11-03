@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 17:52:29 by anggonza          #+#    #+#             */
-/*   Updated: 2021/11/02 18:42:13 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/11/03 11:44:42 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*dest;
 	unsigned char	*source;
 
+	if (!dst && !src)
+		return (dst);
 	dest = (unsigned char *)dst;
 	source = (unsigned char *)src;
-	if (!dst || !src)
-		return (NULL);
 	i = 0;
 	while (i < n)
 	{
 		dest[i] = source[i];
 		i++;
 	}
-	return (dst);
+	return (dest);
 }

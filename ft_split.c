@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 10:47:48 by anggonza          #+#    #+#             */
-/*   Updated: 2021/11/02 15:56:54 by anggonza         ###   ########.fr       */
+/*   Updated: 2021/11/03 12:01:06 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,27 @@ static char	*ft_strtrunk(char *s, char c)
 	return (s);
 }
 
-static void	ft_init_vars(t_vars *v)
+static char	*ft_init_vars(t_vars *v, const char *s, char c)
 {
 	v->i = 0;
 	v->j = 0;
 	v->index = 0;
+	v->str = ft_strtrunk((char *)s, c);
+	if (!v->str)
+	{
+		free(v->str);
+		return (NULL);
+	}
+	return (v->str);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	t_vars	v;
 
-	ft_init_vars(&v);
-	v.str = ft_strtrunk((char *)s, c);
-	if (!v.str)
+	if (!s)
+		return (NULL);
+	if (!ft_init_vars(&v, s, c))
 		return (NULL);
 	v.result = malloc(sizeof(char *) * ft_countwords((char *)v.str, c) + 1);
 	if (!v.result)
